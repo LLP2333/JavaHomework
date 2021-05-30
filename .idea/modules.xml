@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BankingSystem/BankingSystem.iml" filepath="$PROJECT_DIR$/BankingSystem/BankingSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Example/Example.iml" filepath="$PROJECT_DIR$/Example/Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaHomework.iml" filepath="$PROJECT_DIR$/.idea/JavaHomework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practice/Practice.iml" filepath="$PROJECT_DIR$/Practice/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudentInformationManagementSystem/StudentInformationManagementSystem.iml" filepath="$PROJECT_DIR$/StudentInformationManagementSystem/StudentInformationManagementSystem.iml" />
     </modules>
   </component>
