@@ -7,6 +7,7 @@ public class bank {
         Scanner in= new Scanner(System.in);
         String id;
         String YourPassword;
+        String YourChoose;
         do {
             id = in.next();
             if (personMessage.IDcard.containsKey(id)) {
@@ -14,7 +15,11 @@ public class bank {
                 do {
                     YourPassword = in.next();
                     if ((personMessage.IDcard.get(id).getPassword()).equals(YourPassword)) {
-                        System.out.println("登录成功");
+                        System.out.println("登录成功！"+"你好,"+personMessage.IDcard.get(id).getName());
+                        System.out.println("请选择您要办理的业务");
+                        YourChoose=in.next();
+
+
                     } else {
                         System.out.println("密码错误，请重新输入");
                         continue;
@@ -31,6 +36,8 @@ public class bank {
 
             }
         }while (!personMessage.IDcard.containsKey(id));
+        in.close();
+
 
        // Choose.BusinessChoose(in);
 
