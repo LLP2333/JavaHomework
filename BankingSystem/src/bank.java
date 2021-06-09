@@ -19,6 +19,8 @@ public class bank {
                         System.out.println("请选择您要办理的业务");
                         YourChoose=in.next();
 
+                        in.close();
+
 
                     } else {
                         System.out.println("密码错误，请重新输入");
@@ -36,7 +38,7 @@ public class bank {
 
             }
         }while (!personMessage.IDcard.containsKey(id));
-        in.close();
+
 
 
        // Choose.BusinessChoose(in);
