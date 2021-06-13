@@ -1,58 +1,63 @@
-import java.util.Map;
+
 import  java.util.Scanner;
 public class Choose {
 
     //String t;
-    public void YourChoose(Person person,String YourChoose,String id,Map IDcard){
-       while(true){
-           switch(YourChoose){
-                  case "1": {
+    public void YourChoose(Person person,Scanner in){
+           String YourChoose;
+           do{
+               System.out.println("请选择您要办理的业务(1,存款 2,取款 3,余额 4,修改个人密码 0,退出)");
+               YourChoose=in.next();
+               System.out.println("选择成功！");
+           switch(YourChoose) {
+               case "1": {
 
-                      deposit(person);
-                      break;
+                   deposit(person, in);
+                   break;
 
-                  }
-                  case "2": {
-                      withdrawal(person);
-                      break;
-                  }
-                  case "3": {
-                      Search(person);
-                      break;
-                  }
-                  case "4": {
-                      ChangePassword(id, IDcard);
-                      break;
-                  }
-                  case "0": {
-                      System.exit(0);
-                  }
-                  default: {
-                      System.out.println("业务办理失败！");
-                      break;
-                  }
-
-
+               }
+               case "2": {
+                   withdrawal(person, in);
+                   break;
+               }
+               case "3": {
+                   Search(person);
+                   break;
+               }
+               case "4": {
+                   ChangePassword(person, in);
+                   break;
+               }
+               case "0": {
+                   System.exit(0);
+               }
+               default: {
+                   System.out.println("业务办理失败！");
+                   break;
+               }
            }
-       }
+
+
+
+       }while (true);
 
 
     }
     //存款
-    void deposit(Person person){
-        Scanner in=new Scanner(System.in);
+    void deposit(Person person,Scanner in){
+
         int k=in.nextInt();
-        in.close();
+        //in.close();
         int t=person.getAccountBalance();
     person.setAccountBalance(t+k);
 
     }
     //取款
-    void withdrawal(Person person)
+    void withdrawal(Person person,Scanner in)
     {
-        Scanner in=new Scanner(System.in);
+
         int k=in.nextInt();
-        in.close();
+        //in.close();
         int t=person.getAccountBalance();
         if(k>t){
             System.out.println("余额不足，请重新尝试！");
@@ -71,13 +76,19 @@ public class Choose {
     }
 
 
-    void ChangePassword(String id,Map IDcard){
-        System.out.println("请输入新密码");
-        Scanner in=new Scanner(System.in);
+    void ChangePassword(Person person,Scanner in){
+        System.out.println("请输入新密码：");
         String k=in.next();
-        in.close();
-        IDcard.put(k,IDcard.remove(id));
-        System.out.println("密码修改成功！");
+        System.out.println("请再次确认您的新密码：");
+        String t=in.next();
+        if(t.equals(k)){
+            person.setPassword(k);
+            System.out.println("密码修改成功！");
+        }
+        else{
+            System.out.println("两次输入不一致，密码修改失败！");
+        }
+
     }
 
 
