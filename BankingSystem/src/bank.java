@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class bank {
-    public static void main(String[] args){
+    public void BankSystem(){
         System.out.println("欢迎进入中国工商银行！");
         System.out.println("请输入您的账户：");
         Message personMessage=new Message();
